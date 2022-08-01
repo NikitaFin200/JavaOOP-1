@@ -77,16 +77,13 @@ public class Triangle implements Shapes {
     }
 
     public boolean equals(Object o) {//переопределение метода equals
-        if(o == null)
-        {
+        if (o == null) {
             return false;
         }
-        if (o == this)
-        {
+        if (o == this) {
             return true;
         }
-        if (getClass() != o.getClass())
-        {
+        if (getClass() != o.getClass()) {
             return false;
         }
         Shapes e = (Shapes) o;
