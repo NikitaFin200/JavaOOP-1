@@ -1,3 +1,7 @@
+package academ.findyurov.shapes;
+
+import academ.findyurov.shapes.Shapes;
+
 public class Triangle implements Shapes {
 
     private double x1;
@@ -7,7 +11,7 @@ public class Triangle implements Shapes {
     private double x3;
     private double y3;
 
-    private String name;
+    private final String name;
 
     public Triangle(double x1, double y1, double x2, double y2, double x3, double y3, String name) {
         this.x1 = x1;
@@ -68,8 +72,33 @@ public class Triangle implements Shapes {
         return y3;
     }
 
-    public String getName() {
+    public String name() {
         return name;
+    }
+
+    public boolean equals(Object o) {//переопределение метода equals
+        if(o == null)
+        {
+            return false;
+        }
+        if (o == this)
+        {
+            return true;
+        }
+        if (getClass() != o.getClass())
+        {
+            return false;
+        }
+        Shapes e = (Shapes) o;
+        return (this.getHeight() == e.getHeight());
+    }
+
+    public int hashCode()                                             //переопределение метода hashCode
+    {
+        final int PRIME = 31;
+        double result = 1;
+        result = PRIME * result + getPerimeter();
+        return (int) result;
     }
 }
 

@@ -1,3 +1,5 @@
+package academ.findyurov.shapes;
+
 public interface Shapes {
     double getWidth();
 
@@ -7,5 +9,5 @@ public interface Shapes {
 
     double getPerimeter();
 
-    String getName();
+    String name();
 }
